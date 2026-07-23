@@ -12,9 +12,6 @@ let package = Package(
             targets: ["REVUPMediaMaxAdapterBigoTarget"]
         ),
     ],
-    dependencies: [
-        .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package.git", exact: "13.5.1"),
-    ],
     targets: [
         .target(
             name: "REVUPMediaMaxAdapterBigoTarget",
@@ -22,24 +19,26 @@ let package = Package(
                 .target(name: "REVUPMediaMaxAdapterBigo"),
                 .target(name: "REVUPMediaMaxAdapterBigoMediationAdapter"),
                 .target(name: "BigoADS"),
-                .product(name: "AppLovinSDK", package: "AppLovin-MAX-Swift-Package"),
             ],
-            path: "Sources"
+            path: "Sources",
+            linkerSettings: [
+                .linkedLibrary("c++"),
+            ],
         ),
         .binaryTarget(
             name: "REVUPMediaMaxAdapterBigo",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.0.0/REVUPMediaMaxAdapterBigo.zip",
-            checksum: "471ee279a1bfd7e60d08953e99e3b69568c47ceb2f07ea1547dc901a7e5d29a9"
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/REVUPMediaMaxAdapterBigo.zip",
+            checksum: "7c54b1e0b4c6cc404f00f7e164f437d52059141787009d38da8deed5bb262088"
         ),
         .binaryTarget(
             name: "REVUPMediaMaxAdapterBigoMediationAdapter",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.0.0/AppLovinMediationBigoAdsAdapter.xcframework.zip",
-            checksum: "9e22b7b377544f2d91f3b4e63e631d019dd14122359407bc226369e26ee2eefb"
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/AppLovinMediationBigoAdsAdapter.xcframework.zip",
+            checksum: "ed640fae4c7b04da121651e44b06081fdf58c821972b9af6e35d49ba9dc4f622"
         ),
         .binaryTarget(
             name: "BigoADS",
-            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.0.0/BigoADS.xcframework.zip",
-            checksum: "dddec8f8962493f089e9d040a23fb88299c60f662bb9e422a66eff88edd5837d"
+            url: "https://github.com/revup-tnk/REVUP-iOS-SDK/releases/download/1.1.0/BigoADS.xcframework.zip",
+            checksum: "9f8da4ea976fa459388b5b5c2c81e2709de35c146ab963886e19e0bd8c3a11bc"
         ),
     ]
 )
