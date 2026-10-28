@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "bigoads-swift-package",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bigo-ads/BigoADS-Swift-Package.git",
+      "state" : {
+        "revision" : "c6b1b8026768c41e9b14a9d656ce63e8953e6313",
+        "version" : "6.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}
